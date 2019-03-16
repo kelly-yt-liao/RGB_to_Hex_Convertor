@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 注意: 通常 head body 都會同時載入bootstrap ; 以讓整個網頁都能同時使用bootstrap這個html+css+js的前端框架library~. -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- 載入css file, bootstrap, font-awsome等套件 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+
+<body>
+
+  <!-- navigation -->
+  <!-- <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">Welcome to the RGB to Hex number convertor!</span>
+    </div>
+  </nav> -->
+
+  <!-- main body: customize a color and get its hex number -->
+
+  <!-- <div class="wrap mx-auto col-12 clearfix"> -->
+  <div class="d-flex align-content-center flex-row flex-nowrap" id="wrapper">
+
+    <!-- <h1>Welcome to RGB-Hex convertor!</h1> -->
+
+    <!-- <div class="d-flex align-content-center flex-column flex-nowrap" id="wrapper-left"> -->
+    <div class="wrapper-left">
+      <!-- <div class="col-6 float-left"> -->
+      <!-- <div class="col-12 mt-5 mb-5"> -->
+      <h3>Numbers of RGB Color</h3>
+
+      <form>
+        <div class="form-group row">
+          <label for="inputRed" class="col-md-4 col-form-label">Red int number:</label>
+
+          <div class="col-md-6">
+            <input type="number" class="form-control" id="inputRed" min="0" max="255" step="1" placeholder="Input the Red color number"
+              required>
+            <!-- <input type="number" name="quantity" min="1" max="5"> -->
+          </div>
+
+          <div class="col-md-2">
+            <canvas id="rCanvas">canvas tag</canvas>
+            <script>
+              var c = document.getElementById("rCanvas");
+              var ctx = c.getContext("2d");
+              ctx.fillStyle = "#FF0000";
+              ctx.fillRect(0, 0, 40, 40);
+            </script>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputGreen" class="col-md-4 col-form-label">Green int number:</label>
+
+          <div class="col-sm-6">
+            <input type="number" class="form-control" id="inputGreen" min="0" max="255" step="1" placeholder="Input the Green color number"
+              required>
+          </div>
+
+          <div class="col-md-2">
+            <canvas id="gCanvas">canvas tag</canvas>
+            <script>
+              var c = document.getElementById("gCanvas");
+              var ctx = c.getContext("2d");
+              ctx.fillStyle = "#228B22";
+              ctx.fillRect(0, 0, 40, 40);
+            </script>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputBlack" class="col-md-4 col-form-label">Black int number:</label>
+
+          <div class="col-md-6">
+            <input type="number" class="form-control" id="inputBlack" min="0" max="255" step="1" placeholder="Input the Black color number"
+              required>
+          </div>
+
+          <div class="col-md-2">
+            <canvas id="bCanvas">canvas tag</canvas>
+            <script>
+              var c = document.getElementById("bCanvas");
+              var ctx = c.getContext("2d");
+              ctx.fillStyle = "#000000";
+              ctx.fillRect(0, 0, 40, 40);
+            </script>
+          </div>
+
+
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-10">
+            <button type="submit" class="btn btn-primary">Convert</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="wrapper-right">
+
+      <h3>Converted Hex Number</h3>
+
+      <form>
+        <div class="form-group" id="HexInputer">
+          <!-- display hex number and the color after clicking the 'submit' botton -->
+
+        </div>
+      </form>
+
+    </div>
+
+
+  </div>
+
+  <!-- 載入axios, jquery, popper, bootstrap等套件 與 本機端的 Q1_movie_list.js 檔案. -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="RgbHex_convertor.js"></script>
+</body>
+
+</html>

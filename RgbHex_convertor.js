@@ -27,7 +27,7 @@ function displayCanvas(str) {
   var c = document.getElementById("finalCanvas");
   var ctx = c.getContext("2d");
   ctx.fillStyle = str;
-  ctx.fillRect(0, 0, 150, 150);
+  ctx.fillRect(0, 0, 180, 180);
 }
 
 function displayHex(str) {
